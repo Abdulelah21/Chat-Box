@@ -5,22 +5,29 @@ const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+const ejs = require('ejs');
 
+app.set('view engine','ejs');
 
 //The connection to database
-const mongoDB = 'mongodb+srv://abdulelah:abdulelah1420@cluster0.3dfum.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const mongoDB = 'mongodb+srv://abdulelah:abdulelah1420@cluster0.3dfum.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+
 
 mongoose.connect(mongoDB,{ useNewUrlParser: true,
   useUnifiedTopology: true }).then(()=>{
-  console.log('Connected...')
-}).catch(err => console.log(err))
-
+  console.log('Connected...:D...')
+}).catch(err => console.log('ther is error here Connected...:<...',err))
 
 
 const io = new Server(server);
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  Msg.find({},function(err,msgs){
+     res.render('index',{
+       messageList:msgs
+     })
+  })
 });
 
 

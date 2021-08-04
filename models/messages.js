@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 //create a scimy 
 const msgSchema = new mongoose.Schema({
-    msg:{
-       type:String,
-        require:true
-    }
+    msg:String
 })
+
+//{
+  //  type:String,
+ //   require:true
+//}
 
 
 const Msg = mongoose.model('msg',msgSchema);
