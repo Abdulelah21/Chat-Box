@@ -9,17 +9,9 @@
     <style>
         #form {
             background: rgba(0, 0, 0, 0.15);
-            padding: 0.25rem;
-            /*position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    height: 3rem;
-   */
-            left: 0;
+            padding: 0.25rem; 
             box-sizing: border-box;
-            backdrop-filter: blur(10px);
+          
             width: 1000px;
         }
 
@@ -30,6 +22,7 @@
             border-radius: 2rem;
             margin: 0.25rem;
             width: 850px;
+            margin-right: 20px;
         }
 
         #input:focus {
@@ -44,7 +37,7 @@
             border-radius: 3px;
             outline: none;
             color: #fff;
-            float: right;
+            
         }
 
         #messages {
@@ -55,10 +48,15 @@
 
         #messages>li {
             padding: 0.5rem 1rem;
+            background:#4f5d73;  
+        }
+        #messages>p{
+            color: #000;
         }
 
         #messages>li:nth-child(odd) {
             background: #efefef;
+            color: #000;
         }
 
         /*-----------------------------------------------------------------------*/
@@ -87,6 +85,7 @@
             overflow: hidden;
             border-radius: 10px;
             position: relative;
+            overflow-y: scroll;
         }
 
         /* about client */
@@ -126,6 +125,7 @@
             color: #fff;
             position: relative;
             font-size: 0.9em;
+
         }
 
         .client-chat {
@@ -136,7 +136,7 @@
             border-radius: 10px 10px 10px 0;
             margin: 10px 0;
         }
-       
+
         .my-chat {
             width: 60%;
             word-wrap: break-word;
@@ -159,6 +159,7 @@
             overflow: hidden;
             position: absolute;
             bottom: 0;
+            margin-bottom: auto;
         }
 
         .chat-input input {
@@ -235,6 +236,7 @@
 
 
     <div class="container">
+
         <!-- chat box -->
         <div class="chat-box">
             <!-- client -->
@@ -255,20 +257,18 @@
                         </p>
                         <%})%>
                 </ul>
-            </div>
 
+            </div>
             <!-- input field section -->
-            <div class="chat-input">
-                <form id="form" action="">
-                    <input id="input" autocomplete="off" /><button>Send</button>
-                </form>
-            </div>
+
+            <form id="form" action="">
+                <input id="input" autocomplete="off" /><button>Send</button>
+            </form>
+
         </div>
 
-        <!-- button -->
-        <div class="chat-btn">
-            
-        </div>
+
+
     </div>
 
 
