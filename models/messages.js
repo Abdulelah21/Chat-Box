@@ -4,10 +4,7 @@ const msgSchema = new mongoose.Schema({
     msg:String
 })
 
-//{
-  //  type:String,
- //   require:true
-//}
+
 
 
 const Msg = mongoose.model('msg',msgSchema);
